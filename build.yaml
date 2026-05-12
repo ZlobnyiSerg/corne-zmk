@@ -5,11 +5,13 @@
 # over USB-CDC). The right half stays a plain peripheral build.
 ---
 include:
-  - board: nice_nano_v2
+  # `nice_nano` after the Zephyr 4.1 / HWMv2 board rename = old `nice_nano_v2`.
+  # Use `nice_nano@1` if you actually have a v1 board.
+  - board: nice_nano
     shield: corne_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_left_studio
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_right
     artifact-name: corne_right
